@@ -1,0 +1,275 @@
+/* Import Google Font - Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+/* Aturan CSS kamu lainnya akan berada di bawah baris import ini */
+
+h1, h2, h3, p, button {
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Atau untuk kelas tertentu: */
+.judul-utama {
+    font-family: 'Poppins', sans-serif;
+}
+
+
+body {
+    font-family: sans-serif;
+    background-color: #f0f2f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.container {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    display: flex;
+    width: 80%;
+    max-width: 900px;
+    overflow: hidden;
+}
+
+.form-wrapper {
+    padding: 30px;
+    width: 50%; /* Tetapkan lebar menjadi 50% untuk tampilan berdampingan */
+    box-sizing: border-box;
+    transition: transform 0.6s ease-in-out;
+}
+
+.login {
+    transform: translateX(0%);
+}
+
+.signup {
+    transform: translateX(100%);
+}
+
+.form-wrapper.active .login {
+    transform: translateX(-100%);
+}
+
+.form-wrapper.active .signup {
+    transform: translateX(0%);
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.input-group {
+    margin-bottom: 20px;
+    position: relative;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: #555;
+    font-size: 0.9em;
+}
+
+.input-with-icon input[type="email"],
+.input-with-icon input[type="password"],
+.input-with-icon input[type="text"] {
+    width: 100%;
+    padding: 14px 16px; 
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 1.1em;
+    padding-left: 40px; /* Sesuaikan padding kiri untuk ikon */
+    padding-right: 35px; /* Sesuaikan padding kanan untuk ikon mata */
+    font-family: 'Poppins', sans-serif;
+}
+
+.input-icon {
+    height: 24px; /* Perbesar ukuran ikon */
+    width: 24px; /* Perbesar ukuran ikon */
+    margin-right: 10px;
+    position: absolute;
+    left: 12px; /* Sesuaikan posisi ikon */
+    z-index: 1;
+    opacity: 0.7;
+}
+
+.toggle-password {
+    position: absolute;
+    right: 14px; /* Sesuaikan posisi ikon mata */
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #777;
+    font-size: 1.2em;
+    z-index: 2;
+}
+
+
+.input-with-icon input[type="text"] {
+    width: 100%; /* Pastikan lebar input mengisi container */
+    padding-left: 35px;
+    padding-right: 30px; /* Ruang untuk ikon mata */
+    box-sizing: border-box; /* Penting agar padding dan border tidak menambah lebar total */
+    /* Jika perlu, sesuaikan lebar eksplisit agar sama dengan input[type="password"] */
+    /* width: calc(100% - 35px - 30px); */
+}
+
+.input-with-icon input[type="email"]:focus,
+.input-with-icon input[type="password"]:focus {
+    outline: none; /* Hilangkan outline default browser */
+    /* Pastikan tidak ada perubahan border atau padding di sini */
+}
+
+.forgot-password,
+.signup-link,
+.login-link {
+    display: block;
+    text-align: center;
+    margin-top: 15px;
+    color: #555;
+    font-size: 0.9em;
+    text-decoration: none;
+}
+
+.forgot-password:hover,
+.signup-link a:hover,
+.login-link a:hover {
+    text-decoration: underline;
+    color: #007bff;
+}
+
+.btn {
+    background-color: #007bff;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    width: 100%;
+    margin-top: 20px;
+    box-sizing: border-box;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}
+
+.separator {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin: 20px 0;
+    color: #777;
+}
+
+.separator::before,
+.separator::after {
+    content: '';
+    flex-grow: 1;
+    background-color: #ddd;
+    height: 1px;
+    margin: 0 10px;
+}
+
+.input-with-icon {
+    position: relative; /* Membuat container untuk ikon dan input */
+    display: flex; /* Menggunakan flexbox untuk menata ikon dan input */
+    align-items: center; /* Membuat ikon dan input sejajar vertikal */
+}
+
+.input-icon {
+    height: 20px; /* Sesuaikan ukuran logo */
+    width: 20px;
+    margin-right: 10px; /* Berikan jarak antara logo dan input */
+    position: absolute; /* Posisikan ikon di dalam container */
+    left: 10px; /* Atur jarak dari sisi kiri input */
+    z-index: 1; /* Pastikan ikon berada di atas input */
+    opacity: 0.7; /* Membuat ikon sedikit transparan */
+}
+
+.input-with-icon input[type="email"],
+.input-with-icon input[type="password"] {
+    padding-left: 35px; /* Berikan ruang di sisi kiri input agar teks tidak tertutup ikon */
+}
+
+
+.social-login {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 20px; /* Berikan jarak dari tombol utama */
+}
+
+.social-btn {
+    display: flex;
+    align-items: center;
+    padding: 10px 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: white;
+    color: #333;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+.social-btn.facebook {
+    background-color: #1877f2;
+    color: white;
+    border-color: #1877f2;
+}
+
+.social-btn.google {
+    border-color: #db4437;
+    color: #333;
+}
+
+.social-btn img {
+    height: 20px;
+    margin-right: 15px;
+}
+
+.social-btn span {
+    flex-grow: 1;
+    text-align: center;
+}
+
+.social-btn:hover {
+    opacity: 0.9;
+}
+
+.social-btn.google:hover {
+    background-color: #f8f9fa;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column; /* Ubah menjadi satu kolom pada layar kecil */
+        width: 95%;
+    }
+
+    .form-wrapper {
+        width: 100%; /* Setiap form mengambil seluruh lebar */
+    }
+
+    .signup {
+        transform: translateX(0%); /* Tampilkan signup di bawah login secara default */
+    }
+
+    .form-wrapper.active .login {
+        transform: translateX(0%); /* Tampilkan login di atas signup saat aktif */
+    }
+
+    .form-wrapper.active .signup {
+        transform: translateY(-100%); /* Geser signup ke atas saat login aktif */
+    }
+}
+
