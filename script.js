@@ -67,6 +67,7 @@ function loginWithGoogle() {
   firebase.auth().signInWithPopup(provider)
     .then(result => {
       console.log("Login berhasil:", result.user);
+      // Redirect ke Google Classroom resmi
       window.location.href = "https://classroom.google.com/";
     })
     .catch(error => {
