@@ -63,14 +63,14 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 function loginWithGoogle() {
-    const provider = new firebase.auth.GoogleAuthProvider();
-    firebase.auth().signInWithPopup(provider)
-        .then(result => {
-            console.log('Login berhasil:', result.user);
-            window.location.href = "classroom.html";
-        })
-        .catch(error => {
-            console.error('Login gagal:', error);
-            alert('Login gagal: ' + error.message);
-        });
+  const provider = new firebase.auth.GoogleAuthProvider();
+  firebase.auth().signInWithPopup(provider)
+    .then(result => {
+      console.log("Login berhasil:", result.user);
+      window.location.href = "https://classroom.google.com/";
+    })
+    .catch(error => {
+      console.error("Login gagal:", error);
+      alert("Login gagal: " + error.message);
+    });
 }
