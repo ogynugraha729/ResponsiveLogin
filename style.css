@@ -1,0 +1,201 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-image: url('background.jpg'); /* Gambar background kamu nanti */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.container {
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-wrap: wrap;
+    width: 90%;
+    max-width: 1000px;
+    overflow: hidden;
+}
+
+.form-wrapper {
+    padding: 30px;
+    width: 50%;
+    box-sizing: border-box;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.input-group {
+    margin-bottom: 20px;
+    position: relative;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: #555;
+    font-size: 0.9em;
+}
+
+.input-with-icon {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.input-with-icon input[type="email"],
+.input-with-icon input[type="password"],
+.input-with-icon input[type="text"] {
+    width: 100%;
+    padding: 14px 16px;
+    padding-left: 40px;
+    padding-right: 35px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 1.1em;
+    font-family: 'Poppins', sans-serif;
+}
+
+.input-icon {
+    height: 24px;
+    width: 24px;
+    position: absolute;
+    left: 12px;
+    z-index: 1;
+    opacity: 0.7;
+}
+
+.toggle-password {
+    position: absolute;
+    right: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #777;
+    font-size: 1.2em;
+    z-index: 2;
+}
+
+.forgot-password,
+.signup-link,
+.login-link {
+    display: block;
+    text-align: center;
+    margin-top: 15px;
+    color: #555;
+    font-size: 0.9em;
+    text-decoration: none;
+}
+
+.forgot-password:hover,
+.signup-link a:hover,
+.login-link a:hover {
+    text-decoration: underline;
+    color: #007bff;
+}
+
+.btn {
+    background-color: #007bff;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    width: 100%;
+    margin-top: 20px;
+    box-sizing: border-box;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}
+
+.separator {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin: 20px 0;
+    color: #777;
+}
+
+.separator::before,
+.separator::after {
+    content: '';
+    flex-grow: 1;
+    background-color: #ddd;
+    height: 1px;
+    margin: 0 10px;
+}
+
+.social-login {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.social-btn {
+    display: flex;
+    align-items: center;
+    padding: 10px 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: white;
+    color: #333;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+.social-btn.facebook {
+    background-color: #1877f2;
+    color: white;
+    border-color: #1877f2;
+}
+
+.social-btn.google {
+    border-color: #db4437;
+    color: #333;
+}
+
+.social-btn img {
+    height: 20px;
+    margin-right: 15px;
+}
+
+.social-btn span {
+    flex-grow: 1;
+    text-align: center;
+}
+
+.social-btn:hover {
+    opacity: 0.9;
+}
+
+.social-btn.google:hover {
+    background-color: #f8f9fa;
+}
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .form-wrapper {
+        width: 100%;
+    }
+}
