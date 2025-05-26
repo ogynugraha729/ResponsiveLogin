@@ -2,6 +2,14 @@ const container = document.querySelector('.container');
 const loginWrapper = document.querySelector('.login');
 const signupWrapper = document.querySelector('.signup');
 
+function showSignupForm() {
+    container.classList.add('active');
+}
+
+function showLoginForm() {
+    container.classList.remove('active');
+}
+
 function toggleLoginPasswordVisibility() {
     const passwordInput = document.getElementById('login-password');
     const toggleIcon = loginWrapper.querySelector('.toggle-password');
@@ -9,13 +17,13 @@ function toggleLoginPasswordVisibility() {
 
     if (passwordInput.type === 'password') {
         passwordInput.type = 'text';
-        toggleIcon.textContent = '👁‍🗨';
+        toggleIcon.textContent = '👁️‍🗨️';
     } else {
         passwordInput.type = 'password';
-        toggleIcon.textContent = '👁';
+        toggleIcon.textContent = '👁️';
     }
 
-    passwordInput.style.width = ${currentWidth}px;
+    passwordInput.style.width = `${currentWidth}px`;
 }
 
 function toggleSignupPasswordVisibility() {
@@ -25,13 +33,13 @@ function toggleSignupPasswordVisibility() {
 
     if (passwordInput.type === 'password') {
         passwordInput.type = 'text';
-        toggleIcon.textContent = '👁‍🗨';
+        toggleIcon.textContent = '👁️‍🗨️';
     } else {
         passwordInput.type = 'password';
-        toggleIcon.textContent = '👁';
+        toggleIcon.textContent = '👁️';
     }
 
-    passwordInput.style.width = ${currentWidth}px;
+    passwordInput.style.width = `${currentWidth}px`;
 }
 
 function toggleConfirmPasswordVisibility() {
@@ -41,40 +49,29 @@ function toggleConfirmPasswordVisibility() {
 
     if (passwordInput.type === 'password') {
         passwordInput.type = 'text';
-        toggleIcon.textContent = '👁‍🗨';
+        toggleIcon.textContent = '👁️‍🗨️';
     } else {
         passwordInput.type = 'password';
-        toggleIcon.textContent = '👁';
+        toggleIcon.textContent = '👁️';
     }
 
-    passwordInput.style.width = ${currentWidth}px;
+    passwordInput.style.width = `${currentWidth}px`;
 }
 
-// Login manual jika email dan password sesuai
 document.addEventListener('DOMContentLoaded', () => {
-    const loginForm = loginWrapper.querySelector('form');
-    loginForm.addEventListener('submit', (e) => {
-        e.preventDefault();
-        const email = document.getElementById('login-email').value.trim();
-        const password = document.getElementById('login-password').value.trim();
-        if (email === 'admin@gmail.com' && password === '1234') {
-            window.location.href = 'classroom.html';
-        } else {
-            alert('Email atau password salah');
-        }
-    });
+    showLoginForm();
 });
 
-// Login Google
 function loginWithGoogle() {
-    const provider = new firebase.auth.GoogleAuthProvider();
-    firebase.auth().signInWithPopup(provider)
-        .then(result => {
-            console.log("Login berhasil:", result.user);
-            window.location.href = "https://classroom.google.com/";
-        })
-        .catch(error => {
-            console.error("Login gagal:", error);
-            alert("Login gagal: " + error.message);
-        });
+  const provider = new firebase.auth.GoogleAuthProvider();
+  firebase.auth().signInWithPopup(provider)
+    .then(result => {
+      console.log("Login berhasil:", result.user);
+      // Redirect ke Google Classroom resmi
+      window.location.href = "https://classroom.google.com/";
+    })
+    .catch(error => {
+      console.error("Login gagal:", error);
+      alert("Login gagal: " + error.message);
+    });
 }
